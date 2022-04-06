@@ -1,7 +1,6 @@
 package com.gato.pokemon.data.database
 
 import androidx.room.TypeConverter
-import com.gato.pokemon.models.PokemonApiResponse
 import com.gato.pokemon.models.PokemonResult
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken

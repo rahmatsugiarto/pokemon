@@ -4,12 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.gato.pokemon.R
-import com.gato.pokemon.adapter.PokemonAdapter
 import com.gato.pokemon.adapter.PokemonCatchAdapter
 import com.gato.pokemon.databinding.FragmentCatchedBinding
 import com.gato.pokemon.ui.MainActivity
@@ -27,7 +25,7 @@ class CatchedFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentCatchedBinding.inflate(inflater, container, false)
-        //set text action bar
+
         (activity as MainActivity).supportActionBar?.title = getString(R.string.my_catched_pokemon)
         setupRecyclerView()
 

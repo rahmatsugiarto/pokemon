@@ -24,9 +24,6 @@ interface PokemonDao {
     @Delete
     suspend fun deleteFavPokemon(pokemonFav: PokemonFavEntity)
 
-//    @Delete
-//    suspend fun deleteCatchPokemon(pokemonCatch: PokemonCatchEntity)
-
     @Query("SELECT * FROM $FAVORITE_POKE_TABLE ORDER BY id ASC")
     fun readFavPokemon(): Flow<List<PokemonFavEntity>>
 

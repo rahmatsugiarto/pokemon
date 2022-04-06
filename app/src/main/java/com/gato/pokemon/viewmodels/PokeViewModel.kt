@@ -4,9 +4,9 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.gato.pokemon.data.network.ApiClient
 import com.gato.pokemon.models.PokemonApiResponse
 import com.gato.pokemon.models.PokemonResult
-import com.gato.pokemon.data.network.ApiClient
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -15,7 +15,7 @@ class PokeViewModel : ViewModel() {
     val listPoke = MutableLiveData<MutableList<PokemonResult>>()
     private val _listPoke = mutableListOf<PokemonResult>()
     val loadingPoke = MutableLiveData<Boolean>()
-    val successPoke = MutableLiveData<PokemonApiResponse?>()
+    private val successPoke = MutableLiveData<PokemonApiResponse?>()
     val errorPoke = MutableLiveData<String>()
 
     private var offset = 0

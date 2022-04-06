@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.gato.pokemon.data.database.entities.PokemonCatchEntity
 import com.gato.pokemon.databinding.PokeRowLayoutBinding
 import com.gato.pokemon.models.PokemonResult
 import com.gato.pokemon.ui.fragment.PokemonFragmentDirections

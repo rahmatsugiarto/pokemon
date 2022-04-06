@@ -13,4 +13,5 @@
     <color name="cardBackgroundLightColor">#456000E4</color>
     <color name="contextualStatusBarColor">#151B20</color>
     <color name="statusBarColor">#5502C8</color>
+    <color name="gray">#BFBFBF</color>
 </resources>
