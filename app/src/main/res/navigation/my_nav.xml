@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/pokemonFragment">
+
+    <fragment
+        android:id="@+id/pokemonFragment"
+        android:name="com.gato.pokemon.ui.fragment.PokemonFragment"
+        android:label="fragment_pokemon"
+        tools:layout="@layout/fragment_pokemon" >
+        <action
+            android:id="@+id/action_pokemonFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_pokemonFragment_to_favoriteFragment"
+            app:destination="@id/favoriteFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.gato.pokemon.ui.fragment.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="url_detail"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_detailFragment_to_pokemonFragment"
+            app:destination="@id/pokemonFragment" />
+        <argument
+            android:name="detail"
+            app:argType="com.gato.pokemon.models.PokemonResult" />
+    </fragment>
+    <fragment
+        android:id="@+id/catchedFragment"
+        android:name="com.gato.pokemon.ui.fragment.CatchedFragment"
+        android:label="fragment_catched"
+        tools:layout="@layout/fragment_catched" />
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.gato.pokemon.ui.fragment.FavoriteFragment"
+        android:label="fragment_favorite"
+        tools:layout="@layout/fragment_favorite" >
+        <action
+            android:id="@+id/action_favoriteFragment_to_pokemonFragment"
+            app:destination="@id/pokemonFragment" />
+    </fragment>
+</navigation>
