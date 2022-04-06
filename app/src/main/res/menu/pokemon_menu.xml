@@ -5,9 +5,10 @@
 
     <item
         android:id="@+id/to_favorite"
-        android:icon="@drawable/ic_star"
-        android:iconTint="@color/white"
         android:title="@string/favorite"
-        app:showAsAction="ifRoom"
-        tools:targetApi="o" />
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/to_Catch"
+        android:title="@string/my_catched_pokemon"
+        app:showAsAction="never" />
 </menu>

@@ -3,16 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Juara Android/Pokemon/app/src/main/res/drawable-v24/ic_delete.xml" value="0.161" />
+        <entry key="..\:/Juara Android/Pokemon/app/src/main/res/drawable-v24/ic_sad.xml" value="0.1" />
         <entry key="..\:/Juara Android/Pokemon/app/src/main/res/drawable/ic_star.xml" value="0.161" />
         <entry key="..\:/Juara Android/Pokemon/app/src/main/res/layout/activity_main.xml" value="0.18" />
-        <entry key="..\:/Juara Android/Pokemon/app/src/main/res/layout/fragment_catched.xml" value="0.36666666666666664" />
+        <entry key="..\:/Juara Android/Pokemon/app/src/main/res/layout/fav_row_layout.xml" value="0.36666666666666664" />
+        <entry key="..\:/Juara Android/Pokemon/app/src/main/res/layout/fragment_catched.xml" value="0.25" />
         <entry key="..\:/Juara Android/Pokemon/app/src/main/res/layout/fragment_detail.xml" value="0.25" />
         <entry key="..\:/Juara Android/Pokemon/app/src/main/res/layout/fragment_favorite.xml" value="0.33" />
         <entry key="..\:/Juara Android/Pokemon/app/src/main/res/layout/fragment_pokemon.xml" value="0.21203703703703702" />
         <entry key="..\:/Juara Android/Pokemon/app/src/main/res/layout/poke_row_item.xml" value="0.36666666666666664" />
         <entry key="..\:/Juara Android/Pokemon/app/src/main/res/layout/poke_row_layout.xml" value="0.33" />
+        <entry key="..\:/Juara Android/Pokemon/app/src/main/res/menu/favorite_recipes_menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/Juara Android/Pokemon/app/src/main/res/menu/favorites_contextual_menu.xml" value="0.36666666666666664" />
         <entry key="..\:/Juara Android/Pokemon/app/src/main/res/menu/my_nav.xml" value="0.1" />
-        <entry key="..\:/Juara Android/Pokemon/app/src/main/res/menu/pokemon_menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/Juara Android/Pokemon/app/src/main/res/menu/pokemon_menu.xml" value="0.33" />
       </map>
     </option>
   </component>

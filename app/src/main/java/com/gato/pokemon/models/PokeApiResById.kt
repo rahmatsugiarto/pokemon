@@ -1,17 +1,21 @@
 package com.gato.pokemon.models
 
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
+import kotlinx.android.parcel.RawValue
 
+@Parcelize
 data class PokeApiResById(
     @SerializedName("color")
-    val color: Color,
+    val color: @RawValue Color,
     @SerializedName("base_happiness")
     val baseHappiness: Int,
     @SerializedName("capture_rate")
     val captureRate: Int,
     @SerializedName("habitat")
-    val habitat: Habitat,
+    val habitat: @RawValue Habitat,
     @SerializedName("is_baby")
     val isBaby: Boolean,
     @SerializedName("is_legendary")
@@ -22,8 +26,7 @@ data class PokeApiResById(
     val name: String,
     @SerializedName("id")
     val id: Int,
-
-)
+): Parcelable
 
 data class Color(
     @SerializedName("name")

@@ -12,6 +12,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.gato.pokemon.R
 import com.gato.pokemon.adapter.PokemonAdapter
 import com.gato.pokemon.databinding.FragmentPokemonBinding
+import com.gato.pokemon.ui.MainActivity
 import com.gato.pokemon.viewmodels.PokeViewModel
 
 class PokemonFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
@@ -29,6 +30,8 @@ class PokemonFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentPokemonBinding.inflate(inflater, container, false)
+        (activity as MainActivity).supportActionBar?.title = getString(R.string.app_name)
+
         layoutManager = LinearLayoutManager(context)
         setHasOptionsMenu(true)
 
@@ -72,6 +75,9 @@ class PokemonFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.to_favorite) {
             val action = PokemonFragmentDirections.actionPokemonFragmentToFavoriteFragment()
+            findNavController().navigate(action)
+        }else if (item.itemId == R.id.to_Catch) {
+            val action = PokemonFragmentDirections.actionPokemonFragmentToCatchedFragment()
             findNavController().navigate(action)
         }
         return super.onOptionsItemSelected(item)

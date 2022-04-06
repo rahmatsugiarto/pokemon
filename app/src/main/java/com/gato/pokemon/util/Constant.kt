@@ -7,4 +7,5 @@ object Constant {
 
     //room database
     const val FAVORITE_POKE_TABLE = "favorite_pokemon_table"
+    const val CATCH_POKEMON_TABLE = "catch_pokemon_table"
 }

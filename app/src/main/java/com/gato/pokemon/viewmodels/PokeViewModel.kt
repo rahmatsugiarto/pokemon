@@ -29,7 +29,6 @@ class PokeViewModel : ViewModel() {
     fun getListPoke() {
         loadingPoke.value = true
         viewModelScope.launch {
-            delay(1000)
             launch(Dispatchers.Main) {
                 try {
                     val response = ApiClient.pokemonService.getPokemonList(limit, offset)
@@ -52,7 +51,7 @@ class PokeViewModel : ViewModel() {
         loadingPoke.value = true
         Log.d("banana", "getLoadMore: ${successPoke.value?.next.toString()}")
         viewModelScope.launch {
-            delay(2000)
+            delay(1000)
             launch(Dispatchers.Main) {
                 try {
                     val response =

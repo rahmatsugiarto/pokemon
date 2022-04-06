@@ -132,7 +132,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16sp"
         android:layout_marginBottom="8dp"
-        android:text="add to favorite"
+        android:text="@string/add_to_favorite"
         app:layout_constraintBottom_toTopOf="@+id/catch_poke_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -143,10 +143,8 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16sp"
         android:layout_marginBottom="16sp"
-        android:text="Catch Pokemon"
+        android:text="@string/catch_pokemon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

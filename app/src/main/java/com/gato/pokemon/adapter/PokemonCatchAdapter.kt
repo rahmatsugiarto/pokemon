@@ -9,18 +9,19 @@ import androidx.recyclerview.widget.RecyclerView
 import com.gato.pokemon.data.database.entities.PokemonCatchEntity
 import com.gato.pokemon.databinding.PokeRowLayoutBinding
 import com.gato.pokemon.models.PokemonResult
+import com.gato.pokemon.ui.fragment.CatchedFragmentDirections
 import com.gato.pokemon.ui.fragment.PokemonFragmentDirections
 import com.gato.pokemon.util.PokemonDiffUtil
 
-class PokemonAdapter : RecyclerView.Adapter<PokemonAdapter.PokemonViewHolder>() {
+class PokemonCatchAdapter : RecyclerView.Adapter<PokemonCatchAdapter.PokemonViewHolder>() {
 
-    private var listItem = emptyList<PokemonResult>()
+    private var listCatchPoke = emptyList<PokemonCatchEntity>()
 
     class PokemonViewHolder(private val binding: PokeRowLayoutBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(result: PokemonResult) {
-            binding.itemPokeName.text = result.name
+        fun bind(result: PokemonCatchEntity) {
+            binding.itemPokeName.text = result.result.name
         }
 
         companion object {
@@ -36,25 +37,26 @@ class PokemonAdapter : RecyclerView.Adapter<PokemonAdapter.PokemonViewHolder>() 
         return PokemonViewHolder.from(parent)
     }
 
-    override fun getItemCount(): Int = listItem.size
+    override fun getItemCount(): Int = listCatchPoke.size
 
     override fun onBindViewHolder(holder: PokemonViewHolder, position: Int) {
-        val item = listItem[position]
+        val item = listCatchPoke[position]
         holder.bind(item)
         holder.itemView.setOnClickListener {
             Log.d("mamat", "onBindViewHolder: $item")
             val action =
-                PokemonFragmentDirections.actionPokemonFragmentToDetailFragment(item)
+                CatchedFragmentDirections.actionCatchedFragmentToDetailFragment(item.result)
             holder.itemView.findNavController().navigate(action)
 
 
         }
     }
 
-    fun setData(newData: MutableList<PokemonResult>) {
-        val recipesDiffUtil = PokemonDiffUtil(listItem, newData)
+
+    fun setData(newData: List<PokemonCatchEntity>) {
+        val recipesDiffUtil = PokemonDiffUtil(listCatchPoke, newData)
         val diffUtilResult = DiffUtil.calculateDiff(recipesDiffUtil)
-        listItem = newData
+        listCatchPoke = newData
         diffUtilResult.dispatchUpdatesTo(this)
         notifyDataSetChanged()
     }

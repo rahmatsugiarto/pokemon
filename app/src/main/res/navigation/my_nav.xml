@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_pokemonFragment_to_favoriteFragment"
             app:destination="@id/favoriteFragment" />
+        <action
+            android:id="@+id/action_pokemonFragment_to_catchedFragment"
+            app:destination="@id/catchedFragment" />
 
     </fragment>
     <fragment
@@ -23,9 +26,6 @@
         android:name="com.gato.pokemon.ui.fragment.DetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail" >
-        <argument
-            android:name="url_detail"
-            app:argType="string" />
         <action
             android:id="@+id/action_detailFragment_to_pokemonFragment"
             app:destination="@id/pokemonFragment" />
@@ -37,7 +37,11 @@
         android:id="@+id/catchedFragment"
         android:name="com.gato.pokemon.ui.fragment.CatchedFragment"
         android:label="fragment_catched"
-        tools:layout="@layout/fragment_catched" />
+        tools:layout="@layout/fragment_catched" >
+        <action
+            android:id="@+id/action_catchedFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/favoriteFragment"
         android:name="com.gato.pokemon.ui.fragment.FavoriteFragment"
@@ -46,5 +50,8 @@
         <action
             android:id="@+id/action_favoriteFragment_to_pokemonFragment"
             app:destination="@id/pokemonFragment" />
+        <action
+            android:id="@+id/action_favoriteFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
     </fragment>
 </navigation>
