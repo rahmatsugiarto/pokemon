@@ -50,11 +50,11 @@ class PokemonAdapter : RecyclerView.Adapter<PokemonAdapter.PokemonViewHolder>() 
         }
     }
 
-    fun setData(newData: MutableList<PokemonResult>) {
-        val recipesDiffUtil = PokemonDiffUtil(listItem, newData)
-        val diffUtilResult = DiffUtil.calculateDiff(recipesDiffUtil)
-        listItem = newData
-        diffUtilResult.dispatchUpdatesTo(this)
-        notifyDataSetChanged()
+    //make setter for listItem use diffUtil
+    fun setData(listItem: List<PokemonResult>) {
+        val diffCallback = PokemonDiffUtil(this.listItem, listItem)
+        val diffResult = DiffUtil.calculateDiff(diffCallback)
+        this.listItem = listItem.toList()
+        diffResult.dispatchUpdatesTo(this)
     }
 }

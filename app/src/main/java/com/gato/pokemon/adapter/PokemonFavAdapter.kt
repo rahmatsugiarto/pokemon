@@ -123,9 +123,8 @@ class PokemonFavAdapter(
     fun setData(newData: List<PokemonFavEntity>) {
         val recipesDiffUtil = PokemonDiffUtil(listItem, newData)
         val diffUtilResult = DiffUtil.calculateDiff(recipesDiffUtil)
-        listItem = newData
+        listItem = newData.toList()
         diffUtilResult.dispatchUpdatesTo(this)
-        notifyDataSetChanged()
     }
 
     override fun onCreateActionMode(mode: ActionMode?, menu: Menu?): Boolean {

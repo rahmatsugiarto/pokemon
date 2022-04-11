@@ -15,7 +15,7 @@ class PokeViewModel : ViewModel() {
     val listPoke = MutableLiveData<MutableList<PokemonResult>>()
     private val _listPoke = mutableListOf<PokemonResult>()
     val loadingPoke = MutableLiveData<Boolean>()
-    private val successPoke = MutableLiveData<PokemonApiResponse?>()
+    val successPoke = MutableLiveData<PokemonApiResponse?>()
     val errorPoke = MutableLiveData<String>()
 
     private var offset = 0
@@ -33,6 +33,7 @@ class PokeViewModel : ViewModel() {
                 try {
                     val response = ApiClient.pokemonService.getPokemonList(limit, offset)
                     successPoke.value = response
+                    Log.d("getListPoke", "getListPoke: Runn")
 
                     response.pokemonResults.forEach {
                         _listPoke.add(it)

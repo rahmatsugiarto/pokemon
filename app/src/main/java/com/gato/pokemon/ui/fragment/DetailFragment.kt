@@ -19,6 +19,7 @@ import com.gato.pokemon.data.database.entities.PokemonFavEntity
 import com.gato.pokemon.databinding.FragmentDetailBinding
 import com.gato.pokemon.ui.MainActivity
 import com.gato.pokemon.viewmodels.MainViewModel
+import com.gato.pokemon.viewmodels.PokeViewModel
 
 class DetailFragment : Fragment() {
     private var _binding: FragmentDetailBinding? = null
@@ -26,6 +27,7 @@ class DetailFragment : Fragment() {
 
     private val args by navArgs<DetailFragmentArgs>()
     private val mainViewModel by viewModels<MainViewModel>()
+    private val pokeViewModel by viewModels<PokeViewModel>()
 
     private var savedCatch = false
 
@@ -87,11 +89,6 @@ class DetailFragment : Fragment() {
                 }
             }
         }
-
-
-        checkFav()
-        checkCatch()
-
         return binding.root
     }
 
@@ -149,6 +146,10 @@ class DetailFragment : Fragment() {
                 Log.e("DetailsActivity", e.message.toString())
             }
         }
+    }
+    override fun onResume() {
+        super.onResume()
+        Log.d("onResume", "onResume: ${pokeViewModel.listPoke.value?.size}")
     }
 
     override fun onDestroy() {

@@ -1,6 +1,7 @@
 package com.gato.pokemon.ui.fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -63,7 +64,10 @@ class PokemonFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
             }
         }
 
-        pokeViewModel.getListPoke()
+        if (pokeViewModel.listPoke.value.isNullOrEmpty()) {
+            pokeViewModel.getListPoke()
+        }
+
         return binding.root
     }
 
@@ -91,7 +95,18 @@ class PokemonFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
     override fun onRefresh() {
         pokeViewModel.clearData()
         pokeViewModel.getListPoke()
+        Log.d("onRefresh", "getListPoke: Runn")
         binding.swipeRefresh.isRefreshing = false
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("onResume", "onResume: ${pokeViewModel.listPoke.value?.size}")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 
 }

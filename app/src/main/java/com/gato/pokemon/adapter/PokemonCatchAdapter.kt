@@ -56,6 +56,5 @@ class PokemonCatchAdapter : RecyclerView.Adapter<PokemonCatchAdapter.PokemonView
         val diffUtilResult = DiffUtil.calculateDiff(recipesDiffUtil)
         listCatchPoke = newData
         diffUtilResult.dispatchUpdatesTo(this)
-        notifyDataSetChanged()
     }
 }
