@@ -26,7 +26,6 @@ class CatchedFragment : Fragment() {
     ): View {
         _binding = FragmentCatchedBinding.inflate(inflater, container, false)
 
-        (activity as MainActivity).supportActionBar?.title = getString(R.string.my_catched_pokemon)
         setupRecyclerView()
 
         mainViewModel.readCatchPokemon.observe(viewLifecycleOwner) {

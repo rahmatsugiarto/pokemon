@@ -31,7 +31,7 @@ class PokemonFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentPokemonBinding.inflate(inflater, container, false)
-        (activity as MainActivity).supportActionBar?.title = getString(R.string.app_name)
+
 
         layoutManager = LinearLayoutManager(context)
         setHasOptionsMenu(true)

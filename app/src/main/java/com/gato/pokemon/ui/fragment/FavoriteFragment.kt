@@ -26,7 +26,6 @@ class FavoriteFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentFavoriteBinding.inflate(inflater, container, false)
-        (activity as MainActivity).supportActionBar?.title = getString(R.string.favorite)
 
 
         mainViewModel.readFavPokemon.observe(viewLifecycleOwner) {
