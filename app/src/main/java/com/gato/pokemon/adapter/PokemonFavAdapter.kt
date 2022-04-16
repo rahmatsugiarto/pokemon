@@ -92,21 +92,15 @@ class PokemonFavAdapter(
     private fun applySelection(holder: PokemonFavViewHolder, currentRecipes: PokemonFavEntity) {
         if (selectedPokemon.contains(currentRecipes)) {
             selectedPokemon.remove(currentRecipes)
-            changeRecipeStyle(holder, R.color.cardBackgroundColor, R.color.strokeColor)
+            changeRecipeStyle(holder,R.color.strokeColor)
             applyActionModeTitle()
         } else {
             selectedPokemon.add(currentRecipes)
-            changeRecipeStyle(holder, R.color.cardBackgroundLightColor, R.color.purple_500)
+            changeRecipeStyle(holder, R.color.white)
             applyActionModeTitle()
         }
     }
-    private fun changeRecipeStyle(holder: PokemonFavViewHolder, backgroundColor: Int, strokeColor: Int) {
-        holder.itemView.fav_poke_cardView.setBackgroundColor(
-            ContextCompat.getColor(
-                requireActivity,
-                backgroundColor
-            )
-        )
+    private fun changeRecipeStyle(holder: PokemonFavViewHolder, strokeColor: Int) {
         holder.itemView.fav_poke_cardView.strokeColor = ContextCompat.getColor(
             requireActivity,
             strokeColor
@@ -152,11 +146,11 @@ class PokemonFavAdapter(
 
     override fun onDestroyActionMode(mode: ActionMode?) {
         myViewHolder.forEach {
-            changeRecipeStyle(it, R.color.cardBackgroundColor, R.color.strokeColor)
+            changeRecipeStyle(it,R.color.strokeColor)
         }
         multiSelection = false
         selectedPokemon.clear()
-        applyStatusBarColor(R.color.statusBarColor)
+        applyStatusBarColor(R.color.black)
     }
     private fun applyStatusBarColor(color: Int) {
         requireActivity.window.statusBarColor =

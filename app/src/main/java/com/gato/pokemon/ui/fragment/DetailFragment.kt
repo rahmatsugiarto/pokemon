@@ -108,8 +108,6 @@ class DetailFragment : Fragment() {
                     if (saved.result.url == args.detail.url) {
                         binding.catchPokeButton.text = getString(R.string.release)
                         savedCatch = true
-                    } else {
-                        savedCatch = false
                     }
                 }
             } catch (e: Exception) {

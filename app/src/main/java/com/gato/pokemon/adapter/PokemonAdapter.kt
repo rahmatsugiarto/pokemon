@@ -50,7 +50,6 @@ class PokemonAdapter : RecyclerView.Adapter<PokemonAdapter.PokemonViewHolder>() 
         }
     }
 
-    //make setter for listItem use diffUtil
     fun setData(listItem: List<PokemonResult>) {
         val diffCallback = PokemonDiffUtil(this.listItem, listItem)
         val diffResult = DiffUtil.calculateDiff(diffCallback)
